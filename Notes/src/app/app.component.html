@@ -1,0 +1,11 @@
+<p *ngIf="newError">{{error}}</p>
+<form (submit) = "create($event)" >
+            <label for="note" class="active">Note:</label>
+            <input [(ngModel)]="note.content" id="note" name="note" type="text" class="validate">
+            <input class="btn blue" type="submit" value="Add Note">
+</form>
+<div *ngFor="let notei of notes">
+  <span class="card-title">{{notei['content']}}</span>
+  <p>Noted on:  {{notei['createdAt']}}</p>
+     
+</div>
